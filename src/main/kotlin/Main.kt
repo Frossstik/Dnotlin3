@@ -19,7 +19,7 @@ fun lab3(price: Double, sale: Double): String{
 
 fun lab4(string: String): Int{
     var counter: Int = 0
-    var words = string.replace("\\s+".toRegex(), " ").split(" ")
+    var words = string.replace("\\s+|,\\s*|\\.\\s*".toRegex(), " ").split(" ")
     for(i in words)
         counter++
     return counter
@@ -38,6 +38,6 @@ fun main() {
     println(lab3(price.toDouble(), sale.toDouble()))
     println()
 
-    val string: String = "govno zalupa penis her davalka    huy  blyadina"
+    val string: String = "govno,zalupa,penis,her,davalka,huy,blyadina"
     println(lab4(string))
 }
